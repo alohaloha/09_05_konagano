@@ -13,7 +13,7 @@ $tel = $_POST['tel'];
 $yuubin = $_POST['yuubin'];
 $address = $_POST['address'];
 $id = $_POST['id'];
-
+var_dump($_POST);
 
 // DB接続
 $pdo = connect_to_pref_db();
@@ -21,7 +21,7 @@ $pdo = connect_to_pref_db();
 // UPDATE文を作成&実行
 $sql = "UPDATE pref_managers SET pref=:pref, manager=:manager, mail=:mail, tel=:tel,yuubin=:yuubin, address=:address, updated_at=sysdate() WHERE id=:id";
 
-var_dump($sql);
+// var_dump($sql);
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':pref', $pref, PDO::PARAM_STR);
@@ -31,8 +31,10 @@ $stmt->bindValue(':tel', $tel, PDO::PARAM_STR);
 $stmt->bindValue(':yuubin', $yuubin, PDO::PARAM_STR);
 $stmt->bindValue(':address', $address, PDO::PARAM_STR);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-
 $status = $stmt->execute();
+echo $stmt->rowCount();
+// var_dump($status);
+// exit();
 // データ登録処理後
 if ($status == false) {
   // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する

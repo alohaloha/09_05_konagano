@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2020 年 6 月 08 日 13:21
+-- 生成日時: 2020 年 6 月 08 日 15:28
 -- サーバのバージョン： 10.4.11-MariaDB
 -- PHP のバージョン: 7.3.18
 
@@ -44,10 +44,10 @@ CREATE TABLE `pref_managers` (
 --
 
 INSERT INTO `pref_managers` (`id`, `pref`, `manager`, `mail`, `tel`, `yuubin`, `address`, `created_at`, `updated_at`) VALUES
-(2, '佐賀県', '吉田　慎', '41_saga@jewfa.jp', 'yyy-yyyy-yyyy', 'yyyyyyy', '佐賀県佐賀市', '2020-06-08 00:00:00', '2020-06-08 00:00:00'),
-(3, '鹿児島県', '住吉　一洋', '46_kagoshima@jewfa.jp', 'xxx-xxxx-xxxx', 'XXXxxxx', '鹿児島県霧島市', '2020-06-08 18:23:12', '2020-06-08 18:23:12'),
-(4, '福岡県', '鎌田', '40_fukuoka@jewfa.jp', 'fff-fffff', 'FFFffff', '福岡県福岡市中央区大名', '2020-06-08 18:24:28', '2020-06-08 18:24:28'),
-(5, '北海道', '豊田　大地', '01_hokkaido@jewfa.jp', 'hhh-hhhh-hhhh', 'HHH-hhhh', '北海道札幌市', '2020-06-08 20:20:16', '2020-06-08 20:20:16');
+(2, '佐賀県', '吉田　慎', 'test@example.com', 'yyy-yyyy-zzzz', 'yyyyyyy', '佐賀県佐賀市', '2020-06-08 00:00:00', '2020-06-08 21:58:31'),
+(3, '鹿児島県', '住吉　一洋', 'test@example.com', 'xxx-xxxx-xxxx', 'XXXxxxx', '鹿児島県霧島市', '2020-06-08 18:23:12', '2020-06-08 18:23:12'),
+(4, '福岡県', '鎌田', 'test@example.com', 'fff-fffff', 'FFFffff', '福岡県福岡市中央区大名', '2020-06-08 18:24:28', '2020-06-08 18:24:28'),
+(5, '北海道', '豊田　大地', 'test@example.com', 'hhh-hhhh-hhhh', 'HHH-hhhh', '北海道札幌市', '2020-06-08 20:20:16', '2020-06-08 20:20:16');
 
 --
 -- ダンプしたテーブルのインデックス

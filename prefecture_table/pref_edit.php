@@ -78,7 +78,7 @@ if ($status == false) {
       <div>
         <button>submit</button>
       </div>
-      <input type="hidden" value="<? $record['id'] ?>" name="id">
+      <input type="hidden" name="id" value="<?= ($record['id']) ?>">
     </fieldset>
   </form>
 
