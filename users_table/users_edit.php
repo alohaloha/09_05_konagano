@@ -40,7 +40,7 @@ var_dump($record['is_deleted']);
 </head>
 
 <body>
-	<form action="users_update.php" name="users_table">
+	<form action="users_update.php" name="users_table" method="POST">
 		<fieldset>
 			<legend>ユーザー登録内容（編集）</legend>
 			<a href="users_read.php" class="link">一覧画面</a>

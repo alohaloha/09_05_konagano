@@ -1,14 +1,14 @@
 <?php
-// var_dump($_GET);
+// var_dump($_POST);
 // exit();
 
 include('functions.php');
 
-$id = $_GET['id'];
-$user_id = $_GET['user_id'];
-$password = $_GET['password'];
-$is_admin = $_GET['is_admin'];
-$is_deleted = $_GET['is_deleted'];
+$id = $_POST['id'];
+$user_id = $_POST['user_id'];
+$password = $_POST['password'];
+$is_admin = $_POST['is_admin'];
+$is_deleted = $_POST['is_deleted'];
 
 // DB接続
 $pdo  =  connect_users_id_db();
@@ -22,8 +22,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-$stmt->bindValue(':is_admin', $is_admin, PDO::PARAM_STR);
-$stmt->bindValue(':is_deleted', $is_deleted, PDO::PARAM_STR);
+$stmt->bindValue(':is_admin', $is_admin, PDO::PARAM_INT);
+$stmt->bindValue(':is_deleted', $is_deleted, PDO::PARAM_INT);
 $status = $stmt->execute();
 // データ登録処理後
 if ($status == false) {
