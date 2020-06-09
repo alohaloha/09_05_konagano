@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/toggle.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/toggle.css">
   </link>
   <title>ユーザー登録(管理者)</title>
 </head>
@@ -30,6 +30,7 @@
 
         <div>
           <label>管理者権限</label>
+          <input type="hidden" name="is_admin" value="0">
           <input type="checkbox" id="is_admin" name="is_admin">
           <label for="is_admin" class="check">
             <div></div><!--  -->
@@ -38,6 +39,7 @@
 
         <div>
           <label for=" deleted">表示</label>
+          <input type="hidden" name="is_deleted" value="0">
           <input type="checkbox" id="is_deleted" name="is_deleted">
           <label for="is_deleted" class="check">
             <div></div><!--  -->
@@ -48,7 +50,7 @@
       </fieldset>
     </form>
   </main>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
     $(document).on('change', () => {
       if (!document.users_input_admin.is_admin.checked) {
@@ -66,7 +68,7 @@
     });
     // $(document).on('change', () => {
     // });
-  </script> -->
+  </script>
 </body>
 
 </html>

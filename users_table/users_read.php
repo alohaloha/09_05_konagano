@@ -34,6 +34,9 @@ if ($status == false) {
 
         $output .= "</tr>";
     }
+// var_dump($record['is_admin']);
+// exit()
+
     // $valueの参照を解除する．解除しないと，再度foreachした場合に最初からループしない
     // 今回は以降foreachしないので影響なし
     unset($record);
@@ -55,7 +58,7 @@ if ($status == false) {
     <main>
         <fieldset>
             <legend><h3>ユーザー一覧</h3></legend>
-            <a href="users_input_admin.php" class="link">User登録画面へ</a>
+            <a href="users_input_user.php" class="link">User登録画面へ</a>
     
             <table>
                 <thead>

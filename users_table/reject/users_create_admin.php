@@ -1,7 +1,7 @@
 <?php
 // var_dump($_POST);
 // exit();
-include ('functions.php');
+include ('../functions.php');
 if(
     !isset($_POST['user_id']) || $_POST['user_id'] == '' ||
     !isset($_POST['password']) || $_POST['password'] == ''
@@ -11,8 +11,8 @@ if(
     echo json_encode(["error_msg" => "no input"]);
     exit();
 }
-$_POST['is_admin'] = $_POST['is_admin']==null ? 0 : $_POST['is_admin'];
-$_POST['is_deleted'] = $_POST['is_deleted']==null ? 0 : $_POST['is_deleted'];
+$_POST['is_admin'] = $_POST['is_admin']=='on' ? 1 : $_POST['is_admin'];
+$_POST['is_deleted'] = $_POST['is_deleted']=='on' ? 1 : $_POST['is_deleted'];
 
 $user_id=$_POST['user_id'];
 $password = $_POST['password'];
@@ -41,7 +41,7 @@ if ($status == false) {
     exit();
 } else {
     // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
-    header("Location:users_read.php");
+    header("Location:../users_read.php");
     exit();
 }
 

@@ -4,6 +4,9 @@
 
 include('functions.php');
 
+$_POST['is_admin'] = $_POST['is_admin'] == 'on' ? 1 : $_POST['is_admin'];
+$_POST['is_deleted'] = $_POST['is_deleted'] == 'on' ? 1 : $_POST['is_deleted'];
+
 $id = $_POST['id'];
 $user_id = $_POST['user_id'];
 $password = $_POST['password'];
@@ -15,7 +18,7 @@ $pdo  =  connect_users_id_db();
 
 // UPDATE文を作成&実行
 $sql = "";
-$sql = "UPDATE users_table SET user_id = :user_id, password = :password, is_admin = :is_admin, is_deleted = :is_deleted,updated_at = sysdate() WHERE id = :id";
+$sql = "UPDATE users_table SET user_id = :user_id, password = :password, `is_admin` = :is_admin, `is_deleted` = :is_deleted,updated_at = sysdate() WHERE id = :id";
 
 // var_dump($sql);
 $stmt = $pdo->prepare($sql);

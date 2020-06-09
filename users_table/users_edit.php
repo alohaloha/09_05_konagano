@@ -3,6 +3,9 @@
 include('functions.php');
 $id = $_GET['id'];
 
+// var_dump($_GET);
+// exit();
+
 $pdo = connect_users_id_db();
 
 $sql = '';
@@ -66,7 +69,7 @@ var_dump($record['is_deleted']);
 			<div>
 				<label for=" deleted">表示</label>
 				<input type="hidden" name="is_deleted" value="0">
-				<input type="checkbox" id="is_deleted" name="is_deleted" value="<?= ($record['is_deleted'] )?>">
+				<input type="checkbox" id="is_deleted" name="is_deleted" value="<?= $record['is_deleted'] ?>">
 				<label for="is_deleted" class="check">
 					<div></div><!--  -->
 				</label>
@@ -81,7 +84,7 @@ var_dump($record['is_deleted']);
 			<input type="hidden" name="id" value="<?= $record['id'] ?>">
 		</fieldset>
 	</form>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		$(function() {
 
@@ -103,7 +106,7 @@ var_dump($record['is_deleted']);
 
 			});
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>
