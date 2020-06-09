@@ -76,7 +76,7 @@ if ($status == false) {
         <input type="text" name="address" id="address" class="address" value="<?= $record['address'] ?>">
       </div>
       <div>
-        <button>submit</button>
+        <button>登録</button>
       </div>
       <input type="hidden" name="id" value="<?= ($record['id']) ?>">
     </fieldset>

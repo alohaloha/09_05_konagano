@@ -38,7 +38,7 @@
         <input type="text" name="address" id="address" class="address">
       </div>
       <div>
-        <button>submit</button>
+        <button>送信</button>
       </div>
     </fieldset>
   </form>

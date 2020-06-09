@@ -59,7 +59,7 @@ var_dump($record['is_deleted']);
 
 			<div>
 				<label>管理者権限</label>
-				<input type="hidden" name="is_admin" value="0">
+				<!-- <input type="hidden" name="is_admin" value="0"> -->
 				<input type="checkbox" id="is_admin" name="is_admin" value="<?= $record['is_admin'] ?>">
 				<label for="is_admin" class="check">
 					<div></div><!--  -->
@@ -68,7 +68,7 @@ var_dump($record['is_deleted']);
 
 			<div>
 				<label for=" deleted">表示</label>
-				<input type="hidden" name="is_deleted" value="0">
+				<!-- <input type="hidden" name="is_deleted" value="0"> -->
 				<input type="checkbox" id="is_deleted" name="is_deleted" value="<?= $record['is_deleted'] ?>">
 				<label for="is_deleted" class="check">
 					<div></div><!--  -->
@@ -84,9 +84,26 @@ var_dump($record['is_deleted']);
 			<input type="hidden" name="id" value="<?= $record['id'] ?>">
 		</fieldset>
 	</form>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 		$(function() {
+			const $isAdmin = document.users_table.is_admin;
+			const $isDeleted = document.users_table.is_deleted;
+			console.log($isAdmin.value);
+			console.log($isDeleted.value);
+
+			// if($isAdmin.value==1){	jsの書き方
+			// 	$isAdmin.checked=true;
+			// }
+			// if($isDeleted.value==1){	jsの書き方
+			// 	$isDeleted.checked=true;
+			// }
+			if($isAdmin.value==1){
+				$('#is_admin').prop('checked',true);//jQueryの書き方
+			}
+			if($isDeleted.value==1){
+				$('#is_deleted').prop('checked',true);//jQueryの書き方
+			}
 
 			$(document).on('change', () => {
 				if (!document.users_table.is_admin.checked) {
@@ -94,9 +111,11 @@ var_dump($record['is_deleted']);
 				} else {
 					document.users_table.is_admin.value = 1;
 				}
+
+				
 				console.log(document.users_table.is_admin.value);
-			// });
-			// $(document).on('change', () => {
+			});
+			$(document).on('change', () => {
 				if (!document.users_table.is_deleted.checked) {
 					document.users_table.is_deleted.value = 0;
 				} else {
@@ -106,7 +125,7 @@ var_dump($record['is_deleted']);
 
 			});
 		});
-	</script> -->
+	</script>
 </body>
 
 </html>

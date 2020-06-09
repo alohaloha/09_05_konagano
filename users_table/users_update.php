@@ -4,14 +4,23 @@
 
 include('functions.php');
 
-$_POST['is_admin'] = $_POST['is_admin'] == 'on' ? 1 : $_POST['is_admin'];
-$_POST['is_deleted'] = $_POST['is_deleted'] == 'on' ? 1 : $_POST['is_deleted'];
+$is_admin = !isset($_POST['is_admin']) ? 0 : $_POST['is_admin'];
+// if(!isset($_POST['is_admin'])){
+//     $is_admin = 0;
+// }else{
+//     $is_admin = 1;
+// }
+
+$is_deleted = !isset($_POST['is_deleted']) ? 0 : $_POST['is_deleted'];
+// var_dump($is_admin);
+// var_dump($is_deleted);
+// exit();
 
 $id = $_POST['id'];
 $user_id = $_POST['user_id'];
 $password = $_POST['password'];
-$is_admin = $_POST['is_admin'];
-$is_deleted = $_POST['is_deleted'];
+// $is_admin = $_POST['is_admin'];
+// $is_deleted = $_POST['is_deleted'];
 
 // DB接続
 $pdo  =  connect_users_id_db();
