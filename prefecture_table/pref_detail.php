@@ -1,5 +1,9 @@
 <?php
-include('functions.php');
+session_start(); // セッションの開始
+include('functions.php'); // 関数ファイル読み込み
+check_session_id(); // idチェック関数の実行
+// var_dump($_SESSION);
+
 // idの受け取り
 $id = $_GET["id"];
 
@@ -35,14 +39,14 @@ if ($status == false) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title><?= $record['pref'] ?>詳細</title>
+  <title><?= $record['prefecture'] ?>詳細</title>
 </head>
 
 <body>
   <fieldset>
-    <legend><?= $record['pref'] ?>詳細</legend>
+    <legend><h3><?= $record['prefecture'] ?>詳細</h3></legend>
     <a href="pref_read.php" class="link">一覧へ戻る</a>
-    <!-- <a href="pref_edit.php" class="link">編集する</a> -->
+    <a href="pref_edit.php?id=<?= $record['id'] ?>" class="link">編集する</a>
     <table class="detail">
       <thead>
         <tr>
@@ -51,7 +55,7 @@ if ($status == false) {
         </tr>
         <tr>
           <td>都道府県</td>
-          <td><?= $record['pref'] ?></td>
+          <td><?= $record['prefecture'] ?></td>
         </tr>
         <tr>
           <td>代表者</td>

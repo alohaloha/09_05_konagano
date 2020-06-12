@@ -58,7 +58,7 @@ if ($status == false) {
     <main>
         <fieldset>
             <legend><h3>ユーザー一覧</h3></legend>
-            <a href="users_input_user.php" class="link">User登録画面へ</a>
+            <a href="admin/users_input_admin.php" class="link">User登録画面へ</a>
     
             <table>
                 <thead>

@@ -4,11 +4,22 @@
 // exit();
 
 // 関数ファイルの読み込み
-include('functions.php');
+session_start(); // セッションの開始
+include('functions.php'); // 関数ファイル読み込み
+check_session_id(); // idチェック関数の実行
+
+$ID = $_SESSION['id'];//session変数の定義
 
 // idの受け取り
 $id = $_GET["id"];
 // DB接続
+
+if($id != $ID){
+  echo('このページを編集する権限はありません');
+  exit();
+}
+
+
 $pdo = connect_to_pref_db();
 
 // データ取得SQL作成
@@ -52,8 +63,8 @@ if ($status == false) {
       <legend>都道府県協会情報（登録）</legend>
       <a href="pref_read.php" class="link">一覧画面</a>
       <div>
-        <label for="pref">都道府県名</label>
-        <input type="text" name="pref" value="<?= $record['pref'] ?>">
+        <label for="prefecture">都道府県名</label>
+        <input type="text" name="prefecture" value="<?= $record['prefecture'] ?>">
       </div>
       <div>
         <label for="manager">代表者名</label>

@@ -28,6 +28,7 @@ label {
   line-height: 50px;
   text-align: center;
   margin: 8px 0;
+  user-select: none;
 }
 /* input {
   background-color: #f6ebf0;

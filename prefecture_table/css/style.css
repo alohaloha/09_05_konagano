@@ -47,10 +47,12 @@ input[type="password"] {
 input.address{
   width: 500px;
 }
+/* //plaseholderが見えていない状態＝入力済みの状態 */
 input[type="text"]:not(*):placeholder-shown,
 input[type="password"]:not(*):placeholder-shown{
 	background-color: white;
 }
+/* //plaseholderが見えている状態＝未入力の状態 */
 input[type="text"]:placeholder-shown,
 input[type="password"]:placeholder-shown{
 	background-color: #f6ebf0;
@@ -67,14 +69,20 @@ button {
   border-radius: 5px;
   border: 0.5px solid #43a2e5;
   text-align: center;
-  letter-spacing: 0.5rem;
-	margin-left: 150px;
+  letter-spacing: 2px;
+	margin-left: 160px;
 	cursor: pointer;
 }
+/* //adminクラスのついたボタン */
 button.admin{
 		margin-left: 30px;
 		cursor: pointer;
 }
+button:hover{
+  background-color: #43a2e5;
+  color: white;
+}
+/* //linkタグのついたaタグ */
 a.link {
   text-decoration: none;
   display: inline-block;
@@ -84,6 +92,9 @@ a.link {
   text-align: center;
   margin: 8px 16px;
   border-bottom: 5px solid #43a2e5;
+}
+a.link.long{
+  width: 300px;
 }
 a.link:hover{
     background-color: #43a2e5;
@@ -97,6 +108,7 @@ th{
     color: white;
     letter-spacing: 2px;
 }
+/* //trタグのうち、2n番目の要素（偶数番目） */
 tr:nth-child(2n){
     background-color: #eee;
 }
@@ -130,7 +142,8 @@ label.date{
 }
 button#submit{
 	float: right;
-	cursor: pointer;
+  cursor: pointer;
+  margin-left: 8px;
 }
 .detail{
   width: 500px;

@@ -1,9 +1,16 @@
 <?php
+session_start();
 include('functions.php');
+check_session_id(); // idチェック関数の実行
 $pdo = connect_to_pref_db();
 
+//session 変数を定義
+$ID = $_SESSION['id'];
+$PREFECTURE = $_SESSION['prefecture'];
+$MAIL = $_SESSION['mail'];
+
 // データ取得SQL作成
-$sql = 'SELECT id, pref, manager, mail FROM pref_managers';
+$sql = 'SELECT id, prefecture, manager, mail FROM pref_managers';
 // var_dump($sql);
 // exit();
 // SQL準備&実行
@@ -25,7 +32,7 @@ if ($status == false) {
   // `.=`は後ろに文字列を追加する，の意味
   foreach ($result as $record) {
     $output .= "<tr>";
-    $output .= "<td>{$record["pref"]}</td>";
+    $output .= "<td>{$record["prefecture"]}</td>";
     $output .= "<td>{$record["manager"]}</td>";
     $output .= "<td>{$record["mail"]}</td>";
     // edit deleteリンクを追加
@@ -53,7 +60,7 @@ if ($status == false) {
 
 <body>
   <fieldset>
-    <legend>都道府県協会一覧</legend>
+    <legend><h3>都道府県協会一覧</h3></legend>
     <!-- <a href="todo_input.php">入力画面</a> -->
     <table>
       <thead>

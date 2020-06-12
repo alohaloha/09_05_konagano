@@ -6,7 +6,7 @@
 include('functions.php');
 
 // 送信データ受け取り
-$pref = $_POST['pref'];
+$prefecture = $_POST['prefecture'];
 $manager = $_POST['manager'];
 $mail = $_POST['mail'];
 $tel = $_POST['tel'];
@@ -19,12 +19,12 @@ var_dump($_POST);
 $pdo = connect_to_pref_db();
 
 // UPDATE文を作成&実行
-$sql = "UPDATE pref_managers SET pref=:pref, manager=:manager, mail=:mail, tel=:tel,yuubin=:yuubin, address=:address, updated_at=sysdate() WHERE id=:id";
+$sql = "UPDATE pref_managers SET prefecture=:prefecture, manager=:manager, mail=:mail, tel=:tel,yuubin=:yuubin, address=:address, updated_at=sysdate() WHERE id=:id";
 
 // var_dump($sql);
 
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':pref', $pref, PDO::PARAM_STR);
+$stmt->bindValue(':prefecture', $prefecture, PDO::PARAM_STR);
 $stmt->bindValue(':manager', $manager, PDO::PARAM_STR);
 $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
 $stmt->bindValue(':tel', $tel, PDO::PARAM_STR);
